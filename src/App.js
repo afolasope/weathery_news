@@ -49,7 +49,7 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  padding: 1rem;
+  padding: 6rem;
 
   header {
     display: flex;
@@ -90,7 +90,10 @@ const Wrapper = styled.div`
     gap: 1rem;
     border-radius: 8px;
     margin-bottom: 3rem;
-    li{
+    @media (min-width: 600px) {
+      
+    }
+    li {
       cursor: pointer;
     }
   }

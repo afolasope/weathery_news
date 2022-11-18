@@ -27,10 +27,14 @@ h3{
 }
 p{
   margin-bottom: .3rem;
-  font-size:.85rem;
+  font-size:.9rem;
   line-height: 1.5;
   color: ${colors.textPry};
+  @media (min-width:600px) {
+    font-size: 1rem;
+  }
 }
+
 .btn{
   padding: .7rem 1.3rem;
   font-family: inherit;
