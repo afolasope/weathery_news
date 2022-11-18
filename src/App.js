@@ -161,7 +161,7 @@ const Wrapper = styled.div`
         font-size: 3rem;
       }
       @media (min-width: 900px) {
-        font-size: 5rem;
+        font-size: 4rem;
       }
     }
     .desktop-h1 {
@@ -170,7 +170,7 @@ const Wrapper = styled.div`
         padding: 2rem 0;
         display: block;
         font-weight: bolder;
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
     .input-control {
@@ -178,11 +178,17 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
-      box-shadow: 0px 0px 1px ${colors.bgPry};
+      @media (min-width: 800px) {
+        margin-bottom: 2rem;
+      }
       input {
         padding: 0.5rem 0.5rem;
         flex-basis: 90%;
+        box-shadow: 0 5px 2px -5px ${colors.bgPry}, -5px 0 5px -8px ${colors.bgPry},
+          3px 0 5px -5px ${colors.bgPry};
+        border-radius: 6px;
         border: none;
+        transition: all 0.3s ease-in;
         &:focus {
           outline: none;
         }

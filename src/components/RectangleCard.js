@@ -42,8 +42,8 @@ const Wrapper = styled.article`
     align-items: center;
     gap: 3rem;
     padding: 2rem;
-
-    max-height: 20rem;
+    
+    /* max-height: 20rem; */
   }
   .img-container {
     flex-basis: 50%;
