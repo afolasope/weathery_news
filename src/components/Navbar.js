@@ -11,7 +11,7 @@ const Navbar = () => {
         <li>
           <a href="/">For Business</a>
         </li>
-        <li>
+        <li className="active">
           <a href="/">News</a>
         </li>
         <li>
@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div>
-        <button>Get started</button>
+        <button className='btn'>Get started</button>
       </div>
     </Wrapper>
   );
@@ -37,7 +37,17 @@ const Navbar = () => {
 export default Navbar;
 const Wrapper = styled.nav`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+
   ul {
     display: flex;
+  }
+  li {
+    margin-right: 1.5rem;
+    &.active {
+      color: orange;
+    }
   }
 `;

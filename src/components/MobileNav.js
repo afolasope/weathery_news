@@ -1,9 +1,7 @@
 import React from 'react'
 
-const MobileNav = () => {
-  return (
-    <div>MobileNav</div>
-  )
-}
+const MobileNav = ({ navbarOpen, setNavbarOpen }) => {
+  return <div>nav</div>;
+};
 
 export default MobileNav

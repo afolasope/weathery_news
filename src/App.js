@@ -1,35 +1,71 @@
+import { useState } from 'react';
+import styled from 'styled-components';
 import MobileNav from './components/MobileNav';
 import Navbar from './components/Navbar';
+import RectangleCard from './components/RectangleCard';
 
 function App() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
-    <div>
+    <Wrapper>
       <header>
         <p>logo</p>
-        <div>
+        <div className="navbar">
           <Navbar />
         </div>
-        {/* <div> */}
-          {/* <MobileNav /> */}
-        {/* </div> */}
+        <div>
+          <MobileNav navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
+        </div>
       </header>
       <main>
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maxime
-          expedita dicta architecto accusamus, odit laudantium nisi qui ducimus,
-          a facilis mollitia vitae veniam deserunt velit modi perferendis
-          perspiciatis dolor.
+          <h1>The Weather Inside Of 24 Hours and Beyond</h1>
         </div>
         <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-          assumenda impedit vitae eos sapiente! Provident odio commodi maiores
-          molestias cumque ipsam delectus? Numquam accusantium est reiciendis
-          maiores facilis nisi saepe.
+          <span>seach</span>
+          <input type="text" />
+          <button>Search</button>
+        </div>
+        <ul className="temp-list">
+          <li>Rainy</li>
+          <li>Sunny </li>
+          <li>Cloudy</li>
+          <li>Windy</li>
+          <li>Thunderstorms</li>
+          <li>Heat</li>
+        </ul>
+        <div>
+          <RectangleCard />
         </div>
       </main>
       <footer></footer>
-    </div>
+    </Wrapper>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  padding: 1rem;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid teal;
+
+    .navbar {
+      flex-basis: 90%;
+      @media (max-width: 860px) {
+        display: none;
+      }
+    }
+  }
+
+  .temp-list {
+    border: 1px solid orange;
+    display: flex;
+    justify-content: space-between;
+  }
+`;
