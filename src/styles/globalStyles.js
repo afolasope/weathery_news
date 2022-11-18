@@ -29,7 +29,7 @@ p{
   margin-bottom: .3rem;
   font-size:.85rem;
   line-height: 1.5;
-  color: ${colors.text};
+  color: ${colors.textPry};
 }
 .btn{
   padding: .7rem 1.3rem;

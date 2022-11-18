@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MobileNav from './components/MobileNav';
 import Navbar from './components/Navbar';
 import RectangleCard from './components/RectangleCard';
+import { colors } from './styles/variables';
 
 function App() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -19,13 +20,14 @@ function App() {
         </div>
       </header>
       <main>
-        <div>
+        <div className="hero">
           <h1>The Weather Inside Of 24 Hours and Beyond</h1>
-        </div>
-        <div>
-          <span>seach</span>
-          <input type="text" />
-          <button>Search</button>
+          <div className="input-control">
+            <span>sch</span>
+            <input type="text" />
+            <span>v</span>
+            <button className="btn">Search</button>
+          </div>
         </div>
         <ul className="temp-list">
           <li>Rainy</li>
@@ -62,10 +64,34 @@ const Wrapper = styled.div`
       }
     }
   }
-
+  .hero {
+    padding: 2rem 0;
+    h1 {
+      padding: 2rem 0;
+    }
+    .input-control {
+      border: 1px solid rebeccapurple;
+      input {
+        padding: 0.3rem 0.5rem;
+      }
+      .btn {
+        padding: 0.6rem 0.4rem;
+      }
+    }
+  }
   .temp-list {
     border: 1px solid orange;
     display: flex;
-    justify-content: space-between;
+    flex-flow: wrap;
+    justify-content: space-around;
+    background-color: ${colors.bgSec};
+    padding: 2rem 0.5rem;
+    color: #fff;
+    gap: 1rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    li{
+      cursor: pointer;
+    }
   }
 `;
