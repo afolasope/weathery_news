@@ -3,6 +3,7 @@ export const colors = {
   bgSec: '#F05513',
   textPry: '#161518',
   textLinks: '#82808F',
+  bgDark: '#B93815',
 };
 
 export const space = {
