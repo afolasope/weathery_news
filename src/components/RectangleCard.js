@@ -36,16 +36,18 @@ const Wrapper = styled.article`
   padding: 0.5rem;
   border-radius: 2px;
   gap: 0.5rem;
+  display: flex;
   @media (min-width: 800px) {
     display: flex;
     align-items: center;
     gap: 3rem;
     padding: 2rem;
-    max-height: 20rem;
+    
+    /* max-height: 20rem; */
   }
   .img-container {
     flex-basis: 50%;
-    height: 15rem;
+    /* height: 15rem; */
     /* height: 10rem;
     width: 100%; */
     margin-bottom: 0.3rem;
