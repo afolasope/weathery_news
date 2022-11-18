@@ -40,7 +40,7 @@ function App() {
             <span>
               <CiSearch />
             </span>
-            <input type="text" />
+            <input type="text" placeholder='Choose a location' />
             <button className="btn">Search</button>
           </div>
         </div>
@@ -174,18 +174,20 @@ const Wrapper = styled.div`
       }
     }
     .input-control {
-      padding: 0.5rem 0.5rem 0 0.5rem;
+      padding: 0.5rem 0.5rem .5rem 0.5rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      box-shadow: 0 5px 2px -5px ${colors.bgPry},
+        -5px 0 5px -8px ${colors.bgPry}, 3px 0 5px -5px ${colors.bgPry};
       @media (min-width: 800px) {
         margin-bottom: 2rem;
       }
       input {
         padding: 0.5rem 0.5rem;
         flex-basis: 90%;
-        box-shadow: 0 5px 2px -5px ${colors.bgPry}, -5px 0 5px -8px ${colors.bgPry},
-          3px 0 5px -5px ${colors.bgPry};
+
+
         border-radius: 6px;
         border: none;
         transition: all 0.3s ease-in;
