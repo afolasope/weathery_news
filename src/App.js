@@ -75,12 +75,7 @@ const App = () => {
           <img src={logo} alt="" />
         </div>
         <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
-        {openSidebar && (
-          <MobileNav
-            openSidebar={openSidebar}
-            setOpenSidebar={setOpenSidebar}
-          />
-        )}
+        <MobileNav openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
       </header>
       <main>
         <div className="hero">
@@ -101,8 +96,8 @@ const App = () => {
           <li>Sunny </li>
           <li>Cloudy</li>
           <li>Windy</li>
-          <li>Thunderstorms</li>
-          <li>Heat</li>
+          <li className="conditions">Thunderstorms</li>
+          <li className="conditions">Heat</li>
         </ul>
         <div>
           <div className="rectangle">
@@ -184,7 +179,6 @@ const App = () => {
 export default App;
 
 const Wrapper = styled.div`
-  header,
   main {
     padding: 0.5rem;
     @media (min-width: 400px) {
@@ -197,19 +191,26 @@ const Wrapper = styled.div`
       padding: 0 6rem;
     }
   }
-
   header {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    gap: 3rem;
     .logo-container {
       flex-basis: 10%;
+      margin-right: 4rem;
+    }
+    @media (min-width: 400px) {
+      padding: 1.5rem 1.5rem;
+    }
+    @media (min-width: 600px) {
+      padding: 1.5rem 2rem;
+    }
+    @media (min-width: 1200px) {
+      padding: 1.5rem 6rem;
     }
   }
-
   .hero {
     padding: 2rem 0;
     h1 {
@@ -242,9 +243,12 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
-      box-shadow: 0 5px 2px -5px ${colors.bgPry},
-        -5px 0 5px -8px ${colors.bgPry}, 3px 0 5px -5px ${colors.bgPry};
+      box-shadow: 0 5px 2px -5px rgba(86, 85, 96, 0.25),
+        -5px 0 5px -8px rgba(86, 85, 96, 0.25),
+        3px 0 5px -5px rgba(86, 85, 96, 0.25);
       @media (min-width: 800px) {
+        width: 80%;
+        margin: 0 auto;
         margin-bottom: 2rem;
       }
       input {
@@ -280,10 +284,11 @@ const Wrapper = styled.div`
     gap: 1rem;
     border-radius: 8px;
     margin-bottom: 3rem;
-    @media (min-width: 600px) {
-    }
-    li {
-      cursor: pointer;
+    .conditions {
+      display: none;
+      @media (min-width: 600px) {
+        display: block;
+      }
     }
   }
   .rectangle {

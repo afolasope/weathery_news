@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import image from '../assets/image.jpg';
 import { colors } from '../styles/variables';
 
 const Card = ({ image, heading, info, text }) => {

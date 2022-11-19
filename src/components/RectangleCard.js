@@ -38,6 +38,7 @@ const Wrapper = styled.article`
   }
   .img-container {
     flex-basis: 50%;
+    /* max-height: 15rem; */
     /* height: 15rem; */
     /* height: 10rem;
     width: 100%; */
@@ -48,6 +49,7 @@ const Wrapper = styled.article`
       height: 100%;
     }
     @media (min-width: 800px) {
+     
     }
   }
   .text {

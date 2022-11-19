@@ -38,7 +38,7 @@ const Navbar = ({ openSidebar, setOpenSidebar }) => {
 
 export default Navbar;
 const Wrapper = styled.nav`
-  flex-basis: 90%;
+  flex-basis: 100%;
   display: flex;
   ul {
     display: flex;
