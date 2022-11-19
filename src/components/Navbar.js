@@ -1,34 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import { closeNav, openNav, search } from '../assets';
+import { colors } from '../styles/variables';
 
-const Navbar = () => {
+const Navbar = ({ openSidebar, setOpenSidebar }) => {
   return (
     <Wrapper>
-      <ul>
-        <li>
-          <a href="/">Feature</a>
-        </li>
-        <li>
-          <a href="/">For Business</a>
-        </li>
-        <li className="active">
-          <a href="/">News</a>
-        </li>
-        <li>
-          <a href="/">Career</a>
-        </li>
-        <li>
-          <a href="/">About Us</a>
-        </li>
-        <li>
-          <a href="/">FAQs</a>
-        </li>
-        <li>
-          <a href="/">Contact Us</a>
-        </li>
-      </ul>
-      <div>
-        <button className='btn'>Get started</button>
+      <div className="nav-links">
+        <ul>
+          <li>
+            <a href="/">About Us</a>
+          </li>
+          <li>
+            <a href="/">Feature</a>
+          </li>
+          <li>
+            <a href="/">For Business</a>
+          </li>
+        </ul>
+        <div>
+          <button className="btn">Signup</button>
+        </div>
+      </div>
+      <div className="nav-btn">
+        <img
+          src={openNav}
+          alt="open nav"
+          onClick={() => {
+            setOpenSidebar(true);
+            console.log(openSidebar);
+          }}
+        />
       </div>
     </Wrapper>
   );
@@ -36,18 +38,39 @@ const Navbar = () => {
 
 export default Navbar;
 const Wrapper = styled.nav`
+  flex-basis: 90%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid red;
-
   ul {
     display: flex;
   }
   li {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
     &.active {
       color: orange;
+    }
+  }
+  .btn {
+    background-color: ${colors.bgPry};
+    color: #fff;
+    font-size: inherit;
+    &:hover {
+      background-color: ${colors.bgSec};
+    }
+  }
+  .nav-links {
+    display: none;
+    align-items: flex-end;
+    @media (min-width: 860px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  .nav-btn {
+    margin:0 0 0 auto;
+    @media (min-width: 860px) {
+      display: none;
     }
   }
 `;

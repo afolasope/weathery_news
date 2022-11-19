@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import Card from './components/Card';
 import MobileNav from './components/MobileNav';
@@ -9,26 +8,40 @@ import { CiSearch } from 'react-icons/ci';
 import {
   appstore,
   footerIcons,
+  logo,
   logoFooter,
+  news1,
   playstore,
   profile,
 } from './assets';
+import { useState } from 'react';
 
-const articles = [1, 4, 5, 6];
+const articles = [
+  {
+    image: news1,
+    heading:
+      'Pakistan vs England, T20 World Cup Final: Will Rain Force Summit Clash To Go Into Reserve Day?',
+    info: 'NDTV Sports Desk | Sunday November 13, 2022',
+    text: `One question on everyone's minds ahead of the summit clash is about the weather and will it hold for a a full 40-overs game.`,
+  },
+];
 
-function App() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-
+const App = () => {
+  const [openSidebar, setOpenSidebar] = useState(false);
+  console.log(openSidebar);
   return (
     <Wrapper>
       <header>
-        <p>logo</p>
-        <div className="navbar">
-          <Navbar />
+        <div className="logo-container">
+          <img src={logo} alt="" />
         </div>
-        <div>
-          <MobileNav navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-        </div>
+        <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
+        {openSidebar && (
+          <MobileNav
+            openSidebar={openSidebar}
+            setOpenSidebar={setOpenSidebar}
+          />
+        )}
       </header>
       <main>
         <div className="hero">
@@ -40,7 +53,7 @@ function App() {
             <span>
               <CiSearch />
             </span>
-            <input type="text" placeholder='Choose a location' />
+            <input type="text" placeholder="Choose a location" />
             <button className="btn">Search</button>
           </div>
         </div>
@@ -57,8 +70,8 @@ function App() {
             <RectangleCard />
           </div>
           <div className="cards">
-            {articles.map((item) => {
-              return <Card />;
+            {articles.map((item, index) => {
+              return <Card {...item} key={index} />;
             })}
           </div>
         </div>
@@ -116,7 +129,7 @@ function App() {
       </footer>
     </Wrapper>
   );
-}
+};
 
 export default App;
 
@@ -134,18 +147,16 @@ const Wrapper = styled.div`
       padding: 0 6rem;
     }
   }
+
   header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid teal;
     padding: 1rem;
-
-    .navbar {
-      flex-basis: 90%;
-      @media (max-width: 860px) {
-        display: none;
-      }
+    gap: 3rem;
+    .logo-container {
+      flex-basis: 10%;
     }
   }
 
@@ -161,20 +172,23 @@ const Wrapper = styled.div`
         font-size: 3rem;
       }
       @media (min-width: 900px) {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
     .desktop-h1 {
       display: none;
-      @media (min-width: 760px) {
+      @media (min-width: 600px) {
         padding: 2rem 0;
         display: block;
         font-weight: bolder;
-        font-size: 3.5rem;
+        font-size: 2.7rem;
+      }
+      @media (min-width: 600px) {
+        font-size: 3.3rem;
       }
     }
     .input-control {
-      padding: 0.5rem 0.5rem .5rem 0.5rem;
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -186,8 +200,6 @@ const Wrapper = styled.div`
       input {
         padding: 0.5rem 0.5rem;
         flex-basis: 90%;
-
-
         border-radius: 6px;
         border: none;
         transition: all 0.3s ease-in;
@@ -209,7 +221,6 @@ const Wrapper = styled.div`
     }
   }
   .temp-list {
-    border: 1px solid orange;
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
