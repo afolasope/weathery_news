@@ -15,9 +15,12 @@ import openNav from './openNav.svg';
 import web from './icons.svg';
 import profile from './icons.svg';
 import footerIcons from './footer-icons.svg';
-import news1 from './news1.svg'
-import news3 from './news3.svg'
-// import news1 from './news1.svg'
+import news1 from './news1.svg';
+import news3 from './news3.svg';
+import news2 from './news2.svg';
+import news4 from './news4.svg';
+import news5 from './news5.svg';
+import news6 from './news6.svg';
 
 export {
   logoFooter,
@@ -38,5 +41,9 @@ export {
   briefcase,
   signup,
   news1,
-  news3
+  news3,
+  news2,
+  news4,
+  news5,
+  news6,
 };

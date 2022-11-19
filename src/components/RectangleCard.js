@@ -1,24 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import image from '../assets/image.jpg';
 import { colors } from '../styles/variables';
 
-const RectangleCard = () => {
+const RectangleCard = ({ image, heading, info, text }) => {
   return (
     <Wrapper>
       <div className="img-container">
         <img src={image} alt="" />
       </div>
       <div className="text">
-        <h3>How and when will the sun die, researchers have an answer</h3>
-        <p>
-          World News <span>|</span> Edited by Nikhil Pandey <span>|</span>{' '}
-          Saturday November 12, 2022
-        </p>
-        <p>
-          Scientist have forecasted when and how Sun will end, as well as what
-          it would look like
-        </p>
+        <h3>{heading}</h3>
+        <p>{info}</p>
+        <p>{text}</p>
         <p>
           <a href="/">Continue reading</a>
         </p>
@@ -42,8 +35,6 @@ const Wrapper = styled.article`
     align-items: center;
     gap: 3rem;
     padding: 2rem;
-    
-    /* max-height: 20rem; */
   }
   .img-container {
     flex-basis: 50%;
@@ -57,7 +48,6 @@ const Wrapper = styled.article`
       height: 100%;
     }
     @media (min-width: 800px) {
-        
     }
   }
   .text {

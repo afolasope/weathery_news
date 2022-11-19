@@ -11,11 +11,10 @@ import {
 } from '../assets';
 import { colors } from '../styles/variables';
 
-const MobileNav = ({ openSidebar, setOpenSidebar }) => {
+const MobileNav = ({openSidebar,setOpenSidebar} ) => {
   return (
     <Wrapper>
-      {/* <div className={openSidebar ? 'show' : 'mobile-navbar'}> */}
-      <div className='mobile-navbar'>
+      <div className="mobile-navbar">
         <div className="close-nav">
           <img
             src={closeNav}
@@ -65,10 +64,6 @@ const MobileNav = ({ openSidebar, setOpenSidebar }) => {
 };
 
 const Wrapper = styled.div`
-  /* transform: translateX(150%); */
-  .test {
-    border: 5px solid teal;
-  }
   .nav-btn {
     display: flex;
     align-items: center;
@@ -84,9 +79,7 @@ const Wrapper = styled.div`
     background-color: #fff;
     height: 100vh;
     padding: 1.5rem;
-    transform: translateX(100%);
-    transition: width 0.5s ease-in;
-
+    transition: width .5s ease-in;
     hr {
       color: #d0d0d5;
 
@@ -119,10 +112,6 @@ const Wrapper = styled.div`
         }
       }
     }
-  }
-  .show {
-    transform: translateX(0%);
-    transition: width 0.5s ease-in;
   }
 `;
 

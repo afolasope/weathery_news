@@ -11,6 +11,11 @@ import {
   logo,
   logoFooter,
   news1,
+  news2,
+  news3,
+  news4,
+  news5,
+  news6,
   playstore,
   profile,
 } from './assets';
@@ -18,13 +23,47 @@ import { useState } from 'react';
 
 const articles = [
   {
+    image: news2,
+    heading:
+      'Pakistan vs England, T20 World Cup Final: Will Rain Force Summit Clash To Go Into Reserve Day?',
+    info: 'NDTV Sports Desk | Sunday November 13, 2022',
+    text: `One question on everyone's minds ahead of the summit clash is about the weather and will it hold for a a full 40-overs game.`,
+  },
+  {
+    image: news4,
+    heading:
+      'Pakistan vs England, T20 World Cup Final: Will Rain Force Summit Clash To Go Into Reserve Day?',
+    info: 'NDTV Sports Desk | Sunday November 13, 2022',
+    text: `One question on everyone's minds ahead of the summit clash is about the weather and will it hold for a a full 40-overs game.`,
+  },
+  {
     image: news1,
     heading:
       'Pakistan vs England, T20 World Cup Final: Will Rain Force Summit Clash To Go Into Reserve Day?',
     info: 'NDTV Sports Desk | Sunday November 13, 2022',
     text: `One question on everyone's minds ahead of the summit clash is about the weather and will it hold for a a full 40-overs game.`,
   },
+  {
+    image: news5,
+    heading:
+      'Pakistan vs England, T20 World Cup Final: Will Rain Force Summit Clash To Go Into Reserve Day?',
+    info: 'NDTV Sports Desk | Sunday November 13, 2022',
+    text: `One question on everyone's minds ahead of the summit clash is about the weather and will it hold for a a full 40-overs game.`,
+  },
 ];
+
+const rectangle1 = {
+  image: news3,
+  heading: 'How And When Will The Sun Die? Researchers Have An Answer',
+  info: 'World News | Edited by Nikhil Pandey | Saturday November 12, 2022',
+  text: 'Scientists have forecasted when and how Sun will end, as well as what it would look like.',
+};
+const rectangle2 = {
+  image: news6,
+  heading: 'NCAA warns pilots, airlines over adverse weather',
+  info: 'Nigerian Aviation | By Wole Oyebade, 18 June 2021 | 3:06 am',
+  text: `The Nigerian Civil Aviation Authority (NCAA) has warned pilots to be wary of severe thunderstorms and other hazardous weather changes during the rainy season.`,
+};
 
 const App = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -67,7 +106,12 @@ const App = () => {
         </ul>
         <div>
           <div className="rectangle">
-            <RectangleCard />
+            <RectangleCard
+              heading={rectangle1.heading}
+              image={rectangle1.image}
+              info={rectangle1.info}
+              text={rectangle1.text}
+            />
           </div>
           <div className="cards">
             {articles.map((item, index) => {
@@ -76,9 +120,15 @@ const App = () => {
           </div>
         </div>
         <div className="rectangle">
-          <RectangleCard />
+          <RectangleCard
+            heading={rectangle2.heading}
+            image={rectangle2.image}
+            info={rectangle2.info}
+            text={rectangle2.text}
+          />
         </div>
       </main>
+      <div className="pre-footer"></div>
       <footer>
         <div className="top-footer">
           <div>
@@ -248,6 +298,11 @@ const Wrapper = styled.div`
       justify-content: space-between;
     }
   }
+  .pre-footer {
+    margin-top: 6rem;
+    height: 4rem;
+    background-color: #fdead7;
+  }
   footer {
     padding: 2rem 0.5rem;
     @media (min-width: 400px) {
@@ -261,6 +316,7 @@ const Wrapper = styled.div`
     }
     color: #fff;
     background-color: ${colors.bgDark};
+
     ul {
       margin-top: 1.5rem;
       margin-bottom: 2rem;

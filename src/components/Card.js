@@ -40,7 +40,6 @@ const Wrapper = styled.article`
   .img-container {
     flex-basis: 50%;
     height: 15rem;
-
     margin-bottom: 0.3rem;
 
     img {
