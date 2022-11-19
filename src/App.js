@@ -11,7 +11,9 @@ import {
   logo,
   logoFooter,
   news1,
+  news1Vert,
   news2,
+  news2Vert,
   news3,
   news4,
   news5,
@@ -54,12 +56,14 @@ const articles = [
 
 const rectangle1 = {
   image: news3,
+  image2: news1Vert,
   heading: 'How And When Will The Sun Die? Researchers Have An Answer',
   info: 'World News | Edited by Nikhil Pandey | Saturday November 12, 2022',
   text: 'Scientists have forecasted when and how Sun will end, as well as what it would look like.',
 };
 const rectangle2 = {
   image: news6,
+  image2: news2Vert,
   heading: 'NCAA warns pilots, airlines over adverse weather',
   info: 'Nigerian Aviation | By Wole Oyebade, 18 June 2021 | 3:06 am',
   text: `The Nigerian Civil Aviation Authority (NCAA) has warned pilots to be wary of severe thunderstorms and other hazardous weather changes during the rainy season.`,
@@ -104,6 +108,7 @@ const App = () => {
             <RectangleCard
               heading={rectangle1.heading}
               image={rectangle1.image}
+              image2={rectangle1.image2}
               info={rectangle1.info}
               text={rectangle1.text}
             />
@@ -118,6 +123,7 @@ const App = () => {
           <RectangleCard
             heading={rectangle2.heading}
             image={rectangle2.image}
+            image2={rectangle2.image}
             info={rectangle2.info}
             text={rectangle2.text}
           />
@@ -284,6 +290,12 @@ const Wrapper = styled.div`
     gap: 1rem;
     border-radius: 8px;
     margin-bottom: 3rem;
+    @media (min-width: 800px) {
+      padding: 3rem;
+    }
+    @media (min-width: 1200px) {
+      padding: 4rem;
+    }
     .conditions {
       display: none;
       @media (min-width: 600px) {
@@ -291,12 +303,10 @@ const Wrapper = styled.div`
       }
     }
   }
-  .rectangle {
-    margin: 2rem 0;
-  }
+
 
   .cards {
-    margin-top: 4rem;
+    margin-top: 2rem;
     @media (min-width: 690px) {
       display: flex;
       flex-flow: wrap;

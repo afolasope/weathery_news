@@ -6,7 +6,6 @@ import {
   features,
   home,
   info,
-  openNav,
   signup,
 } from '../assets';
 import { colors } from '../styles/variables';
@@ -94,10 +93,9 @@ const Wrapper = styled.div`
     position: fixed;
     background-color: #fff;
     height: 100vh;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     transition: all 0.5s;
     box-shadow: -5px 0 1px -5px #333;
-
     .close-nav,
     ul,
     hr {
@@ -105,26 +103,26 @@ const Wrapper = styled.div`
     }
     hr {
       color: #d0d0d5;
-
       margin: 1.5rem 0;
+      width: 90%;
+      margin: 2rem 0 2rem auto;
     }
-
     @media (min-width: 800px) {
       display: none;
     }
-
     .close-nav {
+      padding: 2rem 3rem 0 0;
       text-align: right;
     }
-
     ul {
+      margin-left: 2rem;
       li {
         display: flex;
         align-items: center;
-        padding: 0.6rem;
+        padding: 0.6rem 0.5rem;
         border-radius: 4px;
         margin-bottom: 1.3rem;
-        color: #1e1e1e;
+        color: #82808f;
         &:hover {
           background-color: #fdead7;
           color: ${colors.bgPry};
@@ -132,6 +130,9 @@ const Wrapper = styled.div`
         cursor: pointer;
         span {
           margin-right: 0.5rem;
+        }
+        img {
+          width: 1.2rem;
         }
       }
     }

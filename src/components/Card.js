@@ -12,12 +12,10 @@ const Card = ({ image, heading, info, text }) => {
         <h3>{heading}</h3>
         <p>{info}</p>
         <p>{text}</p>
-
         <p>
           <a href="/">Continue reading</a>
         </p>
-
-        <p>10th November 2022</p>
+        <p className="date">10th November 2022</p>
       </div>
     </Wrapper>
   );
@@ -30,38 +28,40 @@ const Wrapper = styled.article`
   padding: 0.5rem;
   border-radius: 2px;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   @media (min-width: 600px) {
     flex-basis: 46%;
-    padding: 2rem;
+    padding: 1rem;
+    border-radius: 24px;
   }
 
   .img-container {
     flex-basis: 50%;
-    height: 15rem;
     margin-bottom: 0.3rem;
-
     img {
       width: 100%;
       height: 100%;
-    }
-    @media (min-width: 800px) {
+      object-fit: fill;
     }
   }
   .text {
     flex-basis: 50%;
     h3 {
       text-transform: uppercase;
+      font-size: 1rem;
     }
     p:first-of-type {
       color: ${colors.textLinks};
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: bold;
     }
     p a {
       color: ${colors.bgSec};
       font-size: 0.8rem;
       font-weight: bold;
+    }
+    .date {
+      font-size: 0.7rem;
     }
   }
 `;
