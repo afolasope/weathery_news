@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { closeNav, openNav, search } from '../assets';
+import {  openNav } from '../assets';
 import { colors } from '../styles/variables';
 
 const Navbar = ({ openSidebar, setOpenSidebar }) => {
