@@ -66,7 +66,7 @@ const rectangle2 = {
   image2: news2Vert,
   heading: 'NCAA warns pilots, airlines over adverse weather',
   info: 'Nigerian Aviation | By Wole Oyebade, 18 June 2021 | 3:06 am',
-  text: `The Nigerian Civil Aviation Authority (NCAA) has warned pilots to be wary of severe thunderstorms and other hazardous weather changes during the rainy season.`,
+  text: `The Nigerian Civil Aviation Authority (NCAA) has warned pilots to be wary of severe thunderstorms.`,
 };
 
 const App = () => {
@@ -249,10 +249,13 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
+      border-radius: 1px solid #eee;
       box-shadow: 0 5px 2px -5px rgba(86, 85, 96, 0.25),
         -5px 0 5px -8px rgba(86, 85, 96, 0.25),
         3px 0 5px -5px rgba(86, 85, 96, 0.25);
       @media (min-width: 800px) {
+        border: 1px solid #eee;
+        border-radius: 6px;
         width: 80%;
         margin: 0 auto;
         margin-bottom: 2rem;

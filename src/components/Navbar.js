@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {  openNav } from '../assets';
+import { openNav } from '../assets';
 import { colors } from '../styles/variables';
 
 const Navbar = ({ openSidebar, setOpenSidebar }) => {
@@ -45,8 +45,8 @@ const Wrapper = styled.nav`
   }
   li {
     margin-right: 2rem;
-    &.active {
-      color: orange;
+    &:hover {
+      color: ${colors.bgSec};
     }
   }
   .btn {
@@ -68,7 +68,7 @@ const Wrapper = styled.nav`
     }
   }
   .nav-btn {
-    margin:0 0 0 auto;
+    margin: 0 0 0 auto;
     @media (min-width: 860px) {
       display: none;
     }
